@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 通过@Value方式直接注入值，不需要使用setter()方法
+ * 此方式不支持 Key 的Relaxed binding模式，key的值需与配置中的字符串一致
  */
 @Component
 public class Properties {

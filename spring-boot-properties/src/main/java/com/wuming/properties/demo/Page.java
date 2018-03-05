@@ -24,4 +24,11 @@ public class Page {
         this.max = max;
     }
 
+    @Override
+    public String toString() {
+        return "Page{" +
+                "min=" + min +
+                ", max=" + max +
+                '}';
+    }
 }

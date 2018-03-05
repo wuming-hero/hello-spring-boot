@@ -1,6 +1,8 @@
 # Properties属性配置文件使用详解
 ## 1.基础介绍
-Spring Boot弱化配置的特性让属性配置文件的使用也更加便捷，它默认支持对application.properties或application.yml属性配置文件处理，即在application.properties或application.yml文件中添加属性配置，可以使用@Value注解将属性值注入到beans中，或使用@ConfigurationProperties注解将属性值绑定到结构化的beans中，
+Spring Boot弱化配置的特性让属性配置文件的使用也更加便捷，它默认支持对application.properties或application.yml属性配置文件处理，
+即在application.properties或application.yml文件中添加属性配置，可以使用@Value注解将属性值注入到beans中，
+或使用@ConfigurationProperties注解将属性值绑定到结构化的beans中。
 
 以上对application.properties文件的使用都是基于在classpath根路径下，
 即将application.properties文件放在resources目录下。Spring Boot支持从以下位置加载application.properties文件：
@@ -39,6 +41,21 @@ Spring Boot也支持对这些文件的加载，除了使用spring.config.locatio
 ```
 spring.profiles.include=db,mq
 ```
+注：假如没有在application.properties include其他配置文件，但在某个类中又要使用，该如何是好呢？
+可以使用@PropertySource 来指定任意位置的配置文件
+
+```
+@Component
+@PropertySource("classpath:application-db.properties")
+@ConfigurationProperties(prefix = "db")
+public class DbProperties {
+    private String ip;
+    private String port;
+    // Page 不可以为内部类
+    private Page page;
+    // 省略getter 、setter    
+}
+```
 
 ## 3. 使用@ConfigurationProperties注解
 
@@ -65,4 +82,13 @@ public class DbProperties {
     //省略getter和setter
 
 }
+```
+
+Spring Boot的@ConfigurationProperties注解对这种属性注入方式的key校验不是很严格，你可以在属性配置文件中配置DB.IP或DB_IP，Spring Boot都可以处理。
+以下四种写法都是可以的。 
+```
+1.person.firstName // 标准骆驼式语法
+2.person.first-name // 横线 多用于.properties 或 .yml
+3.person.first_name // 下划线 多用于.properties 或 .yml
+4.PERSON_FIRST_NAME // 大写 多用于环境变量
 ```

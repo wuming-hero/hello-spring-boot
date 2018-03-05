@@ -14,9 +14,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "db")
-public class DbProperties {
+public class PropertiesConfig {
     private String ip;
     private String port;
+    private String displayName;
     // Page 不可以为内部类
     private Page page;
 
@@ -36,12 +37,30 @@ public class DbProperties {
         this.port = port;
     }
 
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
     public Page getPage() {
         return page;
     }
 
     public void setPage(Page page) {
         this.page = page;
+    }
+
+    @Override
+    public String toString() {
+        return "PropertiesConfig{" +
+                "ip='" + ip + '\'' +
+                ", port='" + port + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", page=" + page +
+                '}';
     }
 }
 
