@@ -92,3 +92,8 @@ Spring Boot的@ConfigurationProperties注解对这种属性注入方式的key校
 3.person.first_name // 下划线 多用于.properties 或 .yml
 4.PERSON_FIRST_NAME // 大写 多用于环境变量
 ```
+
+## 4.除了在application.properties 文件中添加配置信息以外,还可以通过命令行来进行配置如通过以下方式指定server.port
+```
+java -jar bootdemo.jar --server.port=8081   
+```
