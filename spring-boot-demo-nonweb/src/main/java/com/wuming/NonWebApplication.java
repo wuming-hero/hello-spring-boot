@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import static java.lang.System.exit;
 
 /**
+ * 在Spring Boot中，要创建一个非Web应用程序，实现CommandLineRunner并覆盖run()方法
+ *
  * @author wuming
  * Created on 2018/3/20 21:19
  */
