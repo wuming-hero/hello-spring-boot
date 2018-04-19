@@ -1,4 +1,4 @@
-package com.wuming.service;
+package com.wuming.nonweb.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
