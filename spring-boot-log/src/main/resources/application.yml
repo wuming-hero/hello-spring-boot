@@ -1,5 +1,19 @@
 spring.profiles.active: test
 
-
 server:
   name: spring-boot-log
+
+# 开启调试模式记录更多信息 或 java -jar test.jar --debug ，开启调试模式并不是改变日志记录的级别为DEBUG
+#debug: true
+
+# 日志文件
+# logging.file和logging.path 都用来指定日志文件路径,相对或绝对路径都可以，同时配置时，最终生效的只是logging.file
+# logging.path 实际上配置的是日志文件文件夹，项目启动后会自动在该路径下创建spring.log的文件。举个例子 logging.path=app,启动项目后，日志文件为app/spring.log
+# 日志级别
+# logging.level.<logger-name>=<level> level可以是TRACE、DEBUG、INFO、WARN、ERROR、FATAL或OFF，对于root级的配置可以使用logging.level.root
+# 此处的日志级别覆盖logback-spring.xml中的配置
+logging:
+  file: server.log
+  level.root: INFO
+  level.*: INFO
+  level.com.wuming: DEBUG
