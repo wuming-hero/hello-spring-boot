@@ -46,6 +46,7 @@
         <module>spring-boot-properties</module>
         <module>spring-boot-log</module>
         <module>spring-boot-demo-nonweb</module>
+        <module>spring-boot-event</module>
     </modules>
 
 </project>
