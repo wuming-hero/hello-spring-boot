@@ -1,8 +1,7 @@
 package com.wuming.demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.wuming.demo.model.Student;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 最简单的一个Spring-boot web示例
@@ -18,5 +17,18 @@ public class IndexController {
     @GetMapping
     public String index() {
         return "Hello World!";
+    }
+
+
+    /**
+     * 如果没有传id的值，springMVC会自动将PathVariable中同名的变量值赋值给 student.id
+     *
+     * @param id
+     * @param student
+     */
+    @PutMapping("/{id}/update")
+    public void create(@PathVariable Long id, Student student) {
+        System.out.println("id: " + id);
+        System.out.println("student: " + student);
     }
 }

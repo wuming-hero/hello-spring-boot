@@ -4,6 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * Spring Boot 推荐将Application启动类放在根包下，
+ * 例如包层级划分如com.example.controller、com.example.service、com.example.dao等，
+ * com.example则是根包，Application启动类推荐放在com.example包下
+ * <p>
+ * 这样做的好处是使用@SpringBootApplication注解标注Application类的时可以省略指定scanBasePackages属性，
+ * 并且应用启动时默认只扫描Application类所在的包及其子包。
+ *
  * @author wuming
  * Created on 2018/3/1 19:04
  */
