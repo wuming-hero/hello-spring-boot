@@ -1,0 +1,5 @@
+
+# 配置freemarker的文件后缀
+spring:
+  freemarker:
+    suffix: .html

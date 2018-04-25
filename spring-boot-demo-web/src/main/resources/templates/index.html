@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>freemarker</title>
+</head>
+
+<body>
+<!-- IDEA中在html中写FreeMarker语法，报语法错误且无法正常格式化-->
+
+<p>${name}</p>
+<#if userList?? &&(userList?size > 0)>
+<#list userList as user>
+<li>
+    ${user.uid}--${user.name}--${user.age}--${user.mobile?if_exists}
+</li>
+</#list>
+</#if>
+
+</body>
+</html>
