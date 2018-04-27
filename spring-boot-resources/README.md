@@ -31,6 +31,29 @@ spring.resources.static-locations=classpath:/statics
 ```
 
 配置自定义静态资源存储目录后，默认的存储位置将不再生效。这个属性同样也可以配置在application.yml中。
+或者直接通过Configuration来进行配置
+```
+package com.wuming.resources;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+/**
+ * 配置静态资源映射
+ * @author sam
+ * @since 2017/7/16
+ */
+@Configuration
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //将所有/static/** 访问都映射到classpath:/static/ 目录下
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    }
+}
+```
 
 
 

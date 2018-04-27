@@ -1,6 +1,6 @@
 ## 使用FreeMarker 进行Web开发
 
-Spring MVC除了可以实现REST web服务之外，还可以使用它提供动态HTML内容。Spring MVC支持多种模板技术，包括Thymeleaf、FreeMarker和JSPs。
+1.Spring MVC除了可以实现REST web服务之外，还可以使用它提供动态HTML内容。Spring MVC支持多种模板技术，包括Thymeleaf、FreeMarker和JSPs。
 另外，许多其他的模板引擎也包括他们自己与Spring MVC的集成使用。Spring Boot支持以下模板引擎的自动配置：
 * FreeMarker
 * Groovy
@@ -15,7 +15,7 @@ Spring MVC除了可以实现REST web服务之外，还可以使用它提供动�
 spring.freemarker.suffix=.html
 ```
 
-3.修改FreeMarker默认配置
+2.修改FreeMarker默认配置
 
 通常不基于Spring Boot使用FreeMarker时，需要在应用上下文文件中配置如下bean及属性值：
 ```
@@ -40,4 +40,10 @@ Spring Boot默认配置的FreeMarker属性值都可以在spring-configuration-me
 这些默认值都可以在application.properties或application.yml中选择性重新配置。
 
 ![通过properties文件配置FreeMarker](src/main/resources/static/640.png)
+
+3.自定义异常页面
+  
+如果想为指定的状态码显示一个自定义的错误页面，可以将这个自定义的错误页面添加到/error目录下。
+错误页面可以是静态HTML，也可以是使用模板构建的文件，例如freemarker，文件的名称必须是确切的状态码。
+例如使用freemarker模板引擎，并且模板后缀名为.html，可以有如下自定义错误页面。 
 
