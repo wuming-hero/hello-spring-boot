@@ -50,6 +50,7 @@
         <module>spring-boot-resources</module>
         <module>spring-boot-demo-web</module>
         <module>spring-boot-mybatis</module>
+        <module>spring-boot-mybatis2</module>
     </modules>
 
 </project>

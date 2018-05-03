@@ -1,4 +1,4 @@
-package com.wuming.mybatis.impl;
+package com.wuming.mybatis.service.impl;
 
 import com.wuming.mybatis.dao.UserMapper;
 import com.wuming.mybatis.model.User;
