@@ -49,6 +49,7 @@
         <module>spring-boot-event</module>
         <module>spring-boot-resources</module>
         <module>spring-boot-demo-web</module>
+        <module>spring-boot-mybatis</module>
     </modules>
 
 </project>
