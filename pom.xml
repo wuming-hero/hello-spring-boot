@@ -51,6 +51,7 @@
         <module>spring-boot-demo-web</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatis2</module>
+        <module>spring-boot-mybatis3</module>
     </modules>
 
 </project>
