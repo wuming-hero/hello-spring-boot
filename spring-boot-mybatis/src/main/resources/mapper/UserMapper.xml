@@ -5,7 +5,7 @@
 当你的namespace绑定接口后，你可以不用写接口实现类，mybatis会通过该绑定自动帮你找到对应要执行的SQL语句。
 请注意接口中的方法与映射文件中的SQL语句的ID一一对应
 -->
-<mapper namespace="com.wuming.mybatis.dao.UserMapper">
+<mapper namespace="com.wuming.mybatis.mapper.UserMapper">
     <resultMap id="UserMap" type="User">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>

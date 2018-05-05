@@ -1,6 +1,6 @@
 package com.wuming.mybatis.service.impl;
 
-import com.wuming.mybatis.dao.UserDao;
+import com.wuming.mybatis.mapper.UserDao;
 import com.wuming.mybatis.model.User;
 import com.wuming.mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

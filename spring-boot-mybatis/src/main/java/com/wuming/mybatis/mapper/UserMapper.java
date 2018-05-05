@@ -1,4 +1,4 @@
-package com.wuming.mybatis.dao;
+package com.wuming.mybatis.mapper;
 
 import com.wuming.mybatis.model.User;
 import org.apache.ibatis.annotations.Mapper;

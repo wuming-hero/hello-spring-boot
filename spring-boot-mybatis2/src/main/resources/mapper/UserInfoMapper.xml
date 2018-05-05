@@ -3,8 +3,8 @@
 <!--
 此处的namespace可以随便写，不为空就好。。。
 -->
-<mapper namespace="xxx">
-    <resultMap id="UserMap" type="User">
+<mapper namespace="com.wuming.mybatis.model.UserInfo">
+    <resultMap id="UserInfoMap" type="UserInfo">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>
         <result column="mobile" property="mobile"></result>
@@ -12,15 +12,15 @@
         <result column="email" property="email"></result>
     </resultMap>
 
-    <select id="findById" parameterType="long" resultMap="UserMap">
+    <select id="findById" parameterType="long" resultMap="UserInfoMap">
         SELECT *
         FROM `user`
         WHERE `id` = #{id};
     </select>
 
-    <insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="User">
+    <insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="UserInfo">
         INSERT INTO `user`
-        (`name`, `mobile`, `age`, `email`)
+        (name, mobile, age, email)
         values
             (#{name}, #{mobile}, #{age}, #{email});
     </insert>
