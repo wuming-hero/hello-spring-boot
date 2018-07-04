@@ -1,6 +1,7 @@
 package com.wuming.web.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author wuming
@@ -12,6 +13,10 @@ public class User implements Serializable {
     private Long uid;
     private String name;
     private Integer age;
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date birthday;
+    private String startTime;
+    private String endTime;
 
     public Long getUid() {
         return uid;
@@ -35,6 +40,30 @@ public class User implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
