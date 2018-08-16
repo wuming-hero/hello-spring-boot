@@ -1,5 +1,7 @@
 package com.wuming.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,12 +9,13 @@ import java.util.Date;
  * @author wuming
  * Created on 2018/4/25 21:48
  */
-public class User implements Serializable {
+public class User2 implements Serializable {
 
     private static final long serialVersionUID = 291885591964622330L;
     private Long uid;
     private String name;
     private Integer age;
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
     private String startTime;
     private String endTime;
