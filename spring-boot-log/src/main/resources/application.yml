@@ -13,7 +13,7 @@ server:
 # logging.level.<logger-name>=<level> level可以是TRACE、DEBUG、INFO、WARN、ERROR、FATAL或OFF，对于root级的配置可以使用logging.level.root
 # 此处的日志级别覆盖logback-spring.xml中的配置
 logging:
-  file: server.log
+  file: /data/logs/server-test.log
   level.root: INFO
   level.*: INFO
   level.com.wuming: DEBUG
