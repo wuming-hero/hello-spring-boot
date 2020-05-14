@@ -47,6 +47,7 @@
         <module>spring-boot-log</module>
         <module>spring-boot-demo-nonweb</module>
         <module>spring-boot-event</module>
+        <module>spring-boot-eventBus</module>
         <module>spring-boot-resources</module>
         <module>spring-boot-demo-web</module>
         <module>spring-boot-mybatis</module>
