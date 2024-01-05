@@ -18,12 +18,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long uid) {
-        return userDao.findById(uid);
+//        return userDao.findById(uid);
+        return new User();
     }
 
     @Override
     public Long createUser(User user) {
-        userDao.create(user);
+//        userDao.create(user);
         return user.getId();
     }
 }

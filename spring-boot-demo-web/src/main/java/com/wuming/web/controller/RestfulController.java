@@ -1,12 +1,15 @@
 package com.wuming.web.controller;
 
+import com.wuming.web.controller.service.UserService;
 import com.wuming.web.model.User;
 import com.wuming.web.model.User2;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.Date;
 
 /**
@@ -20,8 +23,11 @@ import java.util.Date;
  * Created on 2018/5/12 15:21
  */
 @RestController
-@RequestMapping("/date")
-public class DateController {
+@RequestMapping("/restful")
+public class RestfulController {
+
+    @Resource
+    private UserService userService;
 
     /*******************字段 birthday 设计为 Date 类型*******************/
 
@@ -62,7 +68,6 @@ public class DateController {
     @PostMapping("/postParam")
     public void postParam(User user) {
         System.out.println("birthday: " + user.getBirthday());
-        return;
     }
 
     /*******************从上面可以看到，GET 或 POST 方法普通传参方式，在不做其他配置的前题下，是无法正常处理时间字符串的，包括时间戳字符串*******************/
@@ -126,5 +131,10 @@ public class DateController {
     }
 
     /*********************************@JsonFormat 方法结束****************************************/
+
+    @PostMapping("/query/user")
+    public User queryUser(@RequestParam Long userId) {
+        return userService.getUserById(userId);
+    }
 
 }

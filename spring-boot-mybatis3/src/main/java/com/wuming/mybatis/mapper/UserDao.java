@@ -1,6 +1,6 @@
 package com.wuming.mybatis.mapper;
 
-import com.ixiye.boot.mybatis.mysql.dao.MyBatisDao;
+//import com.ixiye.boot.mybatis.mysql.dao.MyBatisDao;
 import com.wuming.mybatis.model.User;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +27,7 @@ import org.springframework.stereotype.Repository;
  * Created on 2018/5/3 14:15
  */
 @Repository
-public class UserDao extends MyBatisDao<User> {
+//public class UserDao extends MyBatisDao<User> {
+public class UserDao {
 
 }

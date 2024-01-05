@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author wuming
  * Created on 2018/4/25 21:17
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com.wuming.web", "com.wuming.starter"})
 public class WebApplication {
 
     public static void main(String[] args) {
