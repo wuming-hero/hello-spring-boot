@@ -5,38 +5,38 @@ package com.wuming.web.common;
  * @author manji
  * Created on 2025/3/1 10:48
  */
-public class BusinessException extends RuntimeException {
+public class BizException extends RuntimeException {
 
     private ErrorEnum errorEnum;
     private String errorCode;
     private String errorMsg;
 
-    public BusinessException() {
+    public BizException() {
         super();
     }
 
-    public BusinessException(Throwable e) {
+    public BizException(Throwable e) {
         super(e);
     }
 
-    public BusinessException(String errorMsg, Throwable e) {
+    public BizException(String errorMsg, Throwable e) {
         super(errorMsg, e);
     }
 
-    public BusinessException(String errorCode, String errorMsg) {
+    public BizException(String errorCode, String errorMsg) {
         super(errorMsg);
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;
     }
 
-    public BusinessException(ErrorEnum errorEnum, String errorMsg) {
+    public BizException(ErrorEnum errorEnum, String errorMsg) {
         super(errorMsg);
         this.errorEnum = errorEnum;
         this.errorCode = errorEnum.getErrorCode();
         this.errorMsg = errorMsg;
     }
 
-    public BusinessException(ErrorEnum errorEnum) {
+    public BizException(ErrorEnum errorEnum) {
         super("[" + errorEnum.getErrorCode() + "]" + ":" + errorEnum.getErrorMsg());
         this.errorEnum = errorEnum;
         this.errorCode = errorEnum.getErrorCode();

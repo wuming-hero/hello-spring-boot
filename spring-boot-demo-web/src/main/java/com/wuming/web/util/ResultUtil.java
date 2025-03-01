@@ -1,7 +1,8 @@
 package com.wuming.web.util;
 
+import com.wuming.web.common.BizException;
 import com.wuming.web.common.ErrorEnum;
-import com.wuming.web.enums.BusinessErrorEnum;
+import com.wuming.web.enums.BizErrorEnum;
 import com.wuming.web.model.ResultDTO;
 
 
@@ -28,11 +29,18 @@ public class ResultUtil {
             return successResult;
         }
 
-        public static <T> ResultDTO<T> failed(BusinessErrorEnum businessErrorEnum) {
+        public static <T> ResultDTO<T> failed(BizErrorEnum businessErrorEnum) {
             ResultDTO<T> errorResult = new ResultDTO();
             errorResult.setSuccess(false);
             errorResult.setErrorCode(businessErrorEnum.getErrorCode());
             errorResult.setErrorMessage(businessErrorEnum.getErrorMsg());
+            return errorResult;
+        }
+        public static <T> ResultDTO<T> failed(BizException bizException) {
+            ResultDTO<T> errorResult = new ResultDTO();
+            errorResult.setSuccess(false);
+            errorResult.setErrorCode(bizException.getErrorCode());
+            errorResult.setErrorMessage(bizException.getErrorMsg());
             return errorResult;
         }
 

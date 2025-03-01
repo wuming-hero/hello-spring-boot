@@ -2,11 +2,11 @@ package com.wuming.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.wuming.web.common.BusinessException;
+import com.wuming.web.common.BizException;
 import com.wuming.web.common.ErrorEnum;
 import com.wuming.web.common.InvokeWrapper;
 import com.wuming.web.util.ResultUtil;
-import com.wuming.web.enums.BusinessErrorEnum;
+import com.wuming.web.enums.BizErrorEnum;
 import com.wuming.web.helper.RedisManager;
 import com.wuming.web.model.ResultDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +32,8 @@ public abstract class BaseService {
      * 默认2s
      */
     private static final Integer DEFAULT_EXPIRE = 2;
+
+
 
     /**
      * service 层通过wrapper层封装， 不需要分布式锁
@@ -65,7 +67,7 @@ public abstract class BaseService {
             doLock(lockEntry);
             locked = true;
             result = ResultUtil.success(invokeWrapper.invoke());
-        } catch (BusinessException se) {
+        } catch (BizException se) {
             log.error(getClassName() + "." + methodName + " error, args:{}", args.argsString(), se);
             result = ResultUtil.failed(se.getErrorEnum());
         } catch (IllegalArgumentException ie) {
@@ -73,7 +75,7 @@ public abstract class BaseService {
             result = ResultUtil.failed(new ErrorEnum() {
                 @Override
                 public String getErrorCode() {
-                    return BusinessErrorEnum.MISS_PARAMS.getErrorCode();
+                    return BizErrorEnum.MISS_PARAMS.getErrorCode();
                 }
 
                 @Override
@@ -83,7 +85,7 @@ public abstract class BaseService {
             });
         } catch (Throwable t) {
             log.error(getClassName() + "." + methodName + " error, args:{}", args.argsString(), t);
-            result = ResultUtil.failed(BusinessErrorEnum.SYSTEM_ERROR);
+            result = ResultUtil.failed(BizErrorEnum.SYSTEM_ERROR);
         } finally {
             if (lockEntry.needLock && locked) {
                 redisManager.unlock(lockEntry.lockKey);
@@ -128,7 +130,7 @@ public abstract class BaseService {
 
         if (lockEntry.needLock && !redisManager.lock(lockEntry.lockKey, lockEntry.expireTime)) {
             log.warn("BaseBenefitService.invoke lock error lockKey{}.", lockEntry.lockKey);
-            throw new BusinessException(BusinessErrorEnum.CONCURRENT_LIMIT);
+            throw new BizException(BizErrorEnum.CONCURRENT_LIMIT);
         }
     }
 

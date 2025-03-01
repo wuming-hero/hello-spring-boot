@@ -6,7 +6,7 @@ import com.wuming.web.common.ErrorEnum;
  * @author manji
  * Created on 2025/3/1 10:50
  */
-public enum BusinessErrorEnum implements ErrorEnum  {
+public enum BizErrorEnum implements ErrorEnum  {
     SYSTEM_ERROR("0000", "服务器开小差了，请稍后再试"),
     MISS_PARAMS("0001", "缺少必要参数"),
     PARAM_ILLEGAL("0002", "参数无效" ),
@@ -17,7 +17,7 @@ public enum BusinessErrorEnum implements ErrorEnum  {
 
     private String errorMsg;
 
-    BusinessErrorEnum(String errorCode, String errorMsg) {
+    BizErrorEnum(String errorCode, String errorMsg) {
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;
     }
