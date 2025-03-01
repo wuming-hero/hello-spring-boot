@@ -1,7 +1,7 @@
-package com.wuming.web.controller.handler;
+package com.wuming.web.handler;
 
 import com.wuming.starter.annotation.Handler;
-import com.wuming.web.controller.common.CommonConstant;
+import com.wuming.web.common.CommonConstant;
 import com.wuming.web.model.User;
 import org.springframework.stereotype.Service;
 

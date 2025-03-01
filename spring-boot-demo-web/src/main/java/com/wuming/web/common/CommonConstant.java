@@ -1,4 +1,4 @@
-package com.wuming.web.controller.common;
+package com.wuming.web.common;
 
 /**
  * @author manji

@@ -1,6 +1,6 @@
 package com.wuming.web.controller;
 
-import com.wuming.web.controller.service.UserService;
+import com.wuming.web.service.UserService;
 import com.wuming.web.model.User;
 import com.wuming.web.model.User2;
 import org.springframework.web.bind.annotation.PostMapping;
