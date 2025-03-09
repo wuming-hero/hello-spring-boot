@@ -99,6 +99,7 @@
         <module>spring-boot-mybatis2</module>
         <module>spring-boot-mybatis3</module>
         <module>spring-boot-starter-demo</module>
+        <module>spring-init</module>
     </modules>
 
 </project>
