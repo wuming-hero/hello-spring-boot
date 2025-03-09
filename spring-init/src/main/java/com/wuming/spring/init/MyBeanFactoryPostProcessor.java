@@ -21,6 +21,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
         System.out.println("【BeanFactoryPostProcessor接口】调用BeanFactoryPostProcessor接口的postProcessBeanFactory方法");
         BeanDefinition beanDefinition = configurableListableBeanFactory.getBeanDefinition("studentBean");
+        // xml配置的age属性是18，此处设置的值会覆盖xml配置的值
         beanDefinition.getPropertyValues().addPropertyValue("age", "21");
     }
 }

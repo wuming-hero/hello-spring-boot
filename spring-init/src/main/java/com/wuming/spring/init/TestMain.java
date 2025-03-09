@@ -5,6 +5,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * Bean 生命周期和该生命周期所涉及的方法调用，分为以下三类 ：
+ * 1. Bean自身的方法	        配置文件中的init-method和destroy-method配置的方法、Bean对象自己调用的方法
+ * 2. Bean级生命周期接口方法	BeanNameAware、BeanFactoryAware、InitializingBean、DiposableBean等接口中的方法
+ * 3. 容器级生命周期接口方法	后置处理器BeanPostProcessor实现类中重写的方法
  * @author manji
  * Created on 2025/3/9 10:53
  */
