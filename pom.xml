@@ -100,6 +100,8 @@
         <module>spring-boot-mybatis3</module>
         <module>spring-boot-starter-demo</module>
         <module>spring-init</module>
+        <module>spring-aop-jdk</module>
+        <module>spring-aop-cglib</module>
     </modules>
 
 </project>
